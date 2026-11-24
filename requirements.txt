@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+alembic
+tree-sitter
+tree-sitter-python
+coverage
+GitPython
+docker
+pytest
+httpx
+ruff
