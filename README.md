@@ -19,10 +19,29 @@ An agent that generates unit tests for Python repositories. It parses code into 
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 docker compose up -d db
-cd backend && uvicorn app.main:app --reload
-pytest        # from backend/
+```
+
+Run the backend from `backend/` in a separate terminal:
+
+```bash
+cd backend
+uvicorn app.main:app --reload
+```
+
+Run the tests from `backend/`:
+
+```bash
+cd backend
+pytest
+```
+
+Run Ruff from the repository root, matching CI:
+
+```bash
 ruff check backend
 ```
+
+The PostgreSQL credentials in `docker-compose.yml` are development defaults for local use only. Do not use them with real data. The database port is bound to `127.0.0.1` and is intended to be accessible only from the local machine.
 
 ## Workflow
 
