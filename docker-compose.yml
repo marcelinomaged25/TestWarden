@@ -2,11 +2,12 @@ services:
   db:
     image: postgres:16
     environment:
+      # Local development defaults only. Do not use these credentials with real data.
       POSTGRES_USER: testwarden
       POSTGRES_PASSWORD: testwarden
       POSTGRES_DB: testwarden
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 volumes:
